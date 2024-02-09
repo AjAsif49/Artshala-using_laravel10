@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/artshala', function () {
+Route::get('/', function () {
     return view('web.index');
 });
 

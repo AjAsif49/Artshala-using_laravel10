@@ -37,10 +37,10 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-            <a href="" class="nav-link {{ request()->routeIs('home.about') ? 'active':'' }}">
+            <a href="{{ route('home.slider') }}" class="nav-link {{ request()->routeIs('home.slider') ? 'active':'' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                About Us
+                All Sliders
               </p>
             </a>
           </li> 
