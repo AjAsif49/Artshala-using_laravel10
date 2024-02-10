@@ -63,14 +63,26 @@ class SliderController extends Controller
                 'created_at' => Carbon::now()
             ]);
 
-            return redirect()->route('home.slider')->with('success', 'Slider Inserted successfully');
+            return redirect()->route('home.slider')->with('success', 'Slider Updated successfully');
     }else{
         Slider::find($id)->update([
             'title' => $request->title,
             'description' => $request->description,
             'created_at' => Carbon::now()
         ]);
-        return redirect()->route('home.slider')->with('success', 'Slider Inserted successfully');
+        return redirect()->route('home.slider')->with('success', 'Slider Updated successfully');
     }
-        }
+    }
+
+    public function DeleteSlider($id){
+        $slider = Slider::find($id);
+        $old_image = $slider->image;
+        unlink($old_image);
+
+        $slider = Slider::find($id)->delete();
+        
+        return redirect()->route('home.slider')->with('success', 'Slider Deleted successfully');
+
+    }
+
 }

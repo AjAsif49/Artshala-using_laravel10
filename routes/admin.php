@@ -13,6 +13,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/slider/store', [SliderController::class, 'StoreSlider'])->name('store.slider');
     Route::get('/slider/edit/{id}', [SliderController::class, 'EditSlider'])->name('edit.slider');
     Route::post('/slider/update/{id}', [SliderController::class, 'UpdateSlider'])->name('update.slider');
-
+    Route::get('/slider/delete/{id}', [SliderController::class, 'DeleteSlider'])->name('delete.slider');
 
 });
