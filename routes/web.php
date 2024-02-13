@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\About;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $sliders = Slider::all();
-    return view('web.layouts.main', compact('sliders'));
+    $abouts  = About::latest()->first();
+    return view('web.layouts.main', compact('sliders', 'abouts'));
 });
 
 

@@ -40,55 +40,19 @@
             <a href="{{ route('home.slider') }}" class="nav-link {{ request()->routeIs('home.slider') ? 'active':'' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                All Sliders
-              </p>
-            </a>
-          </li> 
-
-          {{-- <li class="nav-item">
-            <a href="{{ }}" class="nav-link {{ request()->routeIs('home.product') ? 'active':'' }}">
-              <i class="nav-icon fas fa-th"></i>
-            <p>
-                Products
-              </p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="{{ }}" class="nav-link {{ request()->routeIs('home.slider') ? 'active':'' }}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-              Sliders
+                Sliders
               </p>
             </a>
           </li> 
 
           <li class="nav-item">
-            <a href="{{ }}" class="nav-link {{ request()->routeIs('home.testimonial') ? 'active':'' }}">
+            <a href="{{ route('home.about') }}" class="nav-link {{ request()->routeIs('home.about') ? 'active':'' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>
-              Testimonial
+                About Us
               </p>
             </a>
           </li> 
-
-          <li class="nav-item">
-            <a href="{{ }}" class="nav-link {{ request()->routeIs('home.menu') ? 'active':'' }}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-              Menu
-              </p>
-            </a>
-          </li> 
-
-          <li class="nav-item">
-            <a href="{{ }}" class="nav-link {{ request()->routeIs('home.submenu') ? 'active':'' }}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-              Sub Menu
-              </p>
-            </a>
-          </li>  --}}
 
         </ul>
       </nav>

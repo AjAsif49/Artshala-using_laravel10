@@ -7,9 +7,6 @@
 <body>
 
     @include('web.includes.header')
-
-    @include('web.includes.slider')
-
  
 
   <main id="main">
