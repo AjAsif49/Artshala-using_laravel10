@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,5 +57,19 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function AdminProfile(){
+        $user = Auth::user();
+        return view('admin.profile.edit', compact('user'));
+    }
+
+    public function AdminProfileUpdate(Request $request){
+        auth::user()->update([
+            'name' => $request->name,
+            'email' => $request->email
+        ]);
+        return redirect()->route('admin.profile')->with('success', 'Profile Updated successfully');
+
     }
 }

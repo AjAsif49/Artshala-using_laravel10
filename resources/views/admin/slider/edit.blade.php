@@ -10,6 +10,7 @@
         <div class="card-body">
         <form action="{{ url('slider/update/'.$slider->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+                <input type="hidden" name="old_image" value="{{ $slider->image }}">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Update Slider Title</label>
                     <input type="text" name='title' class="form-control" id="exampleFormControlInput1" value="{{ $slider->title }}">
@@ -26,7 +27,7 @@
 
                     <div class="form-group">
                         <img src="{{ asset($slider->image) }}" style="width: 400px; height:200px;">
-                    </div>
+                    </div> 
                 </div>
                 <div class="form-footer pt-4 pt-5 mt-4 border-top">
                     <button type="submit" class="btn btn-primary">Update</button>

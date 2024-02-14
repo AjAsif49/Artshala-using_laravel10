@@ -2,7 +2,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html"><span>Art</span>Shala</a></h1>
+      <h1 class="logo mr-auto"><a href='/'>Art<span style="color: tomato">Shala</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -29,19 +29,19 @@
 
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="pricing.html">Clients</a></li>
+          <li><a href="blog.html">Career</a></li>
           <li><a href="contact.html">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
 
-      <div class="header-social-links">
+      {{-- <div class="header-social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
         <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
         <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-      </div>
+      </div> --}}
 
     </div>
   </header><!-- End Header -->

@@ -20,18 +20,18 @@ class SliderController extends Controller
     public function StoreSlider(Request $request){
         $slider_image = $request->file('image');
 
-        $name_generate = hexdec(uniqid());
-        $img_ext = strtolower($slider_image->getClientOriginalExtension());
-        $img_name = $name_generate.'.'.$img_ext;
+        $name_generate   = hexdec(uniqid());
+        $img_ext         = strtolower($slider_image->getClientOriginalExtension());
+        $img_name        = $name_generate.'.'.$img_ext;
         $upload_location = 'image/slider/';
-        $last_img = $upload_location.$img_name;
+        $last_img        = $upload_location.$img_name;
         $slider_image -> move($upload_location, $img_name);
 
         Slider::insert([
-            'title' => $request->title,
+            'title'       => $request->title,
             'description' => $request->description,
-            'image' => $last_img,
-            'created_at' => Carbon::now()
+            'image'       => $last_img,
+            'created_at'  => Carbon::now()
         ]);
 
         return redirect()->route('home.slider')->with('success', 'Slider Inserted successfully');
@@ -47,28 +47,28 @@ class SliderController extends Controller
         $slider_image = $request->file('image');
 
         if($slider_image){
-            $name_generate = hexdec(uniqid());
-            $img_ext = strtolower($slider_image->getClientOriginalExtension());
-            $img_name = $name_generate.'.'.$img_ext;
-            $upload_location = 'image/slider/';
-            $last_img = $upload_location.$img_name;
+            $name_generate    = hexdec(uniqid());
+            $img_ext          = strtolower($slider_image->getClientOriginalExtension());
+            $img_name         = $name_generate.'.'.$img_ext;
+            $upload_location  = 'image/slider/';
+            $last_img         = $upload_location.$img_name;
             $slider_image -> move($upload_location, $img_name);
 
             unlink($old_image);
 
             Slider::find($id)->update([
-                'title' => $request->title,
-                'description' => $request->description,
-                'image' => $last_img,
-                'created_at' => Carbon::now()
+                'title'        => $request->title,
+                'description'  => $request->description,
+                'image'        => $last_img,
+                'created_at'   => Carbon::now()
             ]);
 
             return redirect()->route('home.slider')->with('success', 'Slider Updated successfully');
     }else{
         Slider::find($id)->update([
-            'title' => $request->title,
+            'title'       => $request->title,
             'description' => $request->description,
-            'created_at' => Carbon::now()
+            'created_at'  => Carbon::now()
         ]);
         return redirect()->route('home.slider')->with('success', 'Slider Updated successfully');
     }

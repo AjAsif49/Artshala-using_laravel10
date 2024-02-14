@@ -6,7 +6,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ (url('admin/home')) }}" class="nav-link">Home</a>
+        <a href="{{ (url('admin/home')) }}" class="nav-link">Dashboard</a>
       </li>
       {{-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -38,11 +38,16 @@
             <form method="POST" action="{{ route('logout') }}">
               @csrf
               <li>
+                <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                  Profile
+                </a>
+
                 <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 this.closest('form').submit();">
                   Logout
                 </a>
+
               </li>
           </form>
           </a>

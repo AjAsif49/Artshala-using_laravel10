@@ -1,13 +1,20 @@
 <?php
 
-use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/home', function () {
         return view('admin.pages.home');
     });
+    
+    //Admin Routes
+    Route::get('/admin/profile', [ProfileController::class, 'AdminProfile'])->name('admin.profile');
+    Route::post('/admin/profile/update', [ProfileController::class, 'AdminProfileUpdate']);
+
 
     //Slider Routes
     Route::get('/slider/home', [SliderController::class, 'Slider'])->name('home.slider');
@@ -25,5 +32,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/about/update/{id}', [AboutController::class, 'UpdateAbout'])->name('update.about');
     Route::get('/about/delete/{id}', [AboutController::class, 'DeleteAbout'])->name('delete.about');
 
+    //Service routes
+    Route::get('/service/home', [ServiceController::class, 'Service'])->name('home.service');
+    Route::get('/service/add', [ServiceController::class, 'AddService'])->name('add.service');
+    Route::post('/service/store', [ServiceController::class, 'StoreService'])->name('store.service');
+    Route::get('/service/edit/{id}', [ServiceController::class, 'EditService'])->name('edit.service');
+    Route::post('/service/update/{id}', [ServiceController::class, 'UpdateService'])->name('update.service');
+    Route::get('/service/delete/{id}', [ServiceController::class, 'DeleteService'])->name('delete.service');
 
 });
