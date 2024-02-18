@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -39,5 +40,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/service/edit/{id}', [ServiceController::class, 'EditService'])->name('edit.service');
     Route::post('/service/update/{id}', [ServiceController::class, 'UpdateService'])->name('update.service');
     Route::get('/service/delete/{id}', [ServiceController::class, 'DeleteService'])->name('delete.service');
+
+
+    //Clients routes
+    Route::get('/client/home', [ClientController::class, 'Client'])->name('home.client');
+    Route::get('/client/add', [ClientController::class, 'AddClient'])->name('add.client');
+    Route::post('/client/store', [ClientController::class, 'StoreClient'])->name('store.client');
+    Route::get('/client/edit/{id}', [ClientController::class, 'EditClient'])->name('edit.client');
+    Route::post('/client/update/{id}', [ClientController::class, 'UpdateClient'])->name('update.client');
+    Route::get('/client/delete/{id}', [ClientController::class, 'DeleteClient'])->name('delete.client');
 
 });

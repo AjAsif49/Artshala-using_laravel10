@@ -62,6 +62,15 @@
             </a>
           </li> 
 
+          <li class="nav-item">
+            <a href="{{ route('home.client') }}" class="nav-link {{ request()->routeIs('home.client') ? 'active':'' }}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Clients
+              </p>
+            </a>
+          </li> 
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
