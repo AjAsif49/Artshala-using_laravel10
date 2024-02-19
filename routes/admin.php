@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -50,4 +51,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/client/update/{id}', [ClientController::class, 'UpdateClient'])->name('update.client');
     Route::get('/client/delete/{id}', [ClientController::class, 'DeleteClient'])->name('delete.client');
 
+
+    //Contact routes
+    Route::get('/contact/home', [ContactController::class, 'Contact'])->name('home.contact');
+    Route::get('/contact/add', [ContactController::class, 'AddContact'])->name('add.contact');
+    Route::post('/contact/store', [ContactController::class, 'StoreContact'])->name('store.contact');
+    Route::get('/contact/edit/{id}', [ContactController::class, 'EditContact'])->name('edit.contact');
+    Route::post('/contact/update/{id}', [ContactController::class, 'UpdateContact'])->name('update.contact');
+    Route::get('/contact/delete/{id}', [ContactController::class, 'DeleteContact'])->name('delete.contact');
 });

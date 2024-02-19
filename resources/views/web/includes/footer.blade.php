@@ -6,13 +6,11 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Company</h3>
+            <h3>{{ $contact->company_name }}</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              {{ $contact->address }} <br><br>
+              <strong>Phone:</strong> {{ $contact->phone }}<br>
+              <strong>Email:</strong> {{ $contact->email }}<br>
             </p>
           </div>
 
@@ -29,12 +27,11 @@
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
+
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              @foreach ($services as $service)
+              <li><i class="bx bx-chevron-right"></i> <a href="#">{{ $service->title }}</a></li>
+              @endforeach
             </ul>
           </div>
 

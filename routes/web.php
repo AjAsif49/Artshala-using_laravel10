@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Models\About;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Service;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +24,8 @@ Route::get('/', function () {
     $services = Service::all();
     $abouts   = About::latest()->first();
     $clients  = Client::all();
-    return view('web.layouts.main', compact('sliders', 'abouts', 'services', 'clients'));
+    $contact  = Contact::latest()->first();
+    return view('web.layouts.main', compact('sliders', 'abouts', 'services', 'clients', 'contact'));
 });
 
 

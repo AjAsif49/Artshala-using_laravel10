@@ -71,6 +71,15 @@
             </a>
           </li> 
 
+          <li class="nav-item">
+            <a href="{{ route('home.contact') }}" class="nav-link {{ request()->routeIs('home.contact') ? 'active':'' }}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Contact
+              </p>
+            </a>
+          </li> 
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
