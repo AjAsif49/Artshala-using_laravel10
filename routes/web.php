@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\About;
 use App\Models\Client;
@@ -27,6 +28,9 @@ Route::get('/', function () {
     $contact  = Contact::latest()->first();
     return view('web.layouts.main', compact('sliders', 'abouts', 'services', 'clients', 'contact'));
 });
+
+Route::get('/contact', [HomeController::class, 'Contact'])->name('contact');
+
 
 
 
