@@ -31,6 +31,11 @@ Route::get('/', function () {
 
 Route::get('/contact', [HomeController::class, 'Contact'])->name('contact');
 
+Route::post('/message', [HomeController::class, 'Message'])->name('message');
+Route::get('/home/message', [HomeController::class, 'AllMessages'])->name('home.message');
+Route::get('/message/delete/{id}', [HomeController::class, 'DeleteMessages'])->name('delete.message');
+
+
 
 
 

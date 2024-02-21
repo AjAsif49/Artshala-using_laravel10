@@ -80,6 +80,15 @@
             </a>
           </li> 
 
+          <li class="nav-item">
+            <a href="{{ route('home.message') }}" class="nav-link {{ request()->routeIs('home.message') ? 'active':'' }}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Messages
+              </p>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
