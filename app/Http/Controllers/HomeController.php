@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use App\Models\Contact;
 use App\Models\Message;
 use App\Models\Service;
@@ -36,8 +37,12 @@ class HomeController extends Controller
     public function DeleteMessages($id){
         Message::find($id)->delete();
         return redirect()->route('home.message')->with('success', 'Message deleted successfully');
-
-        
-
     }
+
+    public function Clients(){
+        $clients  = Client::all();
+        $services = Service::all();
+        $contact  = Contact::latest()->first();
+            return view('web.pages.client', compact('clients', 'contact', 'services'));
+        }
 }

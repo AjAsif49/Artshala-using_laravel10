@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -59,4 +60,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/contact/edit/{id}', [ContactController::class, 'EditContact'])->name('edit.contact');
     Route::post('/contact/update/{id}', [ContactController::class, 'UpdateContact'])->name('update.contact');
     Route::get('/contact/delete/{id}', [ContactController::class, 'DeleteContact'])->name('delete.contact');
+
+    //Message routes
+    Route::get('/home/message', [HomeController::class, 'AllMessages'])->name('home.message');
+    Route::get('/message/delete/{id}', [HomeController::class, 'DeleteMessages'])->name('delete.message');
 });

@@ -27,13 +27,14 @@ Route::get('/', function () {
     $clients  = Client::all();
     $contact  = Contact::latest()->first();
     return view('web.layouts.main', compact('sliders', 'abouts', 'services', 'clients', 'contact'));
-});
+})->name('/')    ;
 
 Route::get('/contact', [HomeController::class, 'Contact'])->name('contact');
+Route::get('/service', [HomeController::class, 'service'])->name('service');
+Route::get('/clients', [HomeController::class, 'Clients'])->name('clients');
 
 Route::post('/message', [HomeController::class, 'Message'])->name('message');
-Route::get('/home/message', [HomeController::class, 'AllMessages'])->name('home.message');
-Route::get('/message/delete/{id}', [HomeController::class, 'DeleteMessages'])->name('delete.message');
+
 
 
 

@@ -8,7 +8,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="nav-link {{ request()->routeIs('/') ? 'active':'' }}"><a href="{{ url('/') }}">Home</a></li>
 
           {{-- <li class="drop-down"><a href="">About</a>
             <ul>
@@ -27,9 +27,9 @@
             </ul>
           </li> --}}
 
-          <li><a href="services.html">Services</a></li>
-          <li><a href="pricing.html">Clients</a></li>
-          <li><a href="{{ route('contact') }}">Contact</a></li>
+          <li class="nav-link {{ request()->routeIs('service') ? 'active':'' }}"><a href="{{ route('service') }}">Services</a></li>
+          <li class="nav-link {{ request()->routeIs('clients') ? 'active':'' }}"><a href="{{ route('clients') }}">Clients</a></li>
+          <li class="nav-link {{ request()->routeIs('contact') ? 'active':'' }}"><a href="{{ route('contact') }}">Contact</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
